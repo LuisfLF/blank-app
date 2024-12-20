@@ -13,6 +13,12 @@ import pickle
 import os
 from collections import Counter
 
+# Configuración de la página con título e ícono
+st.set_page_config(
+    page_title="Detección de Inmunodeficiencias",
+    page_icon="icon.svg",  # Asegúrate de que el archivo `icon.png` esté en tu directorio de trabajo
+)
+
 # Function to run the model and return results
 def run_model_DX(data, target_num, features, scale=False):
     data['pre_target']= data['Category'].astype('category').cat.codes
